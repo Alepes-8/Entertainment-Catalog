@@ -1,9 +1,6 @@
 import express from "express"
 import routes from "./routes/routes.js"
 
-
-
-
 //Create application and set it to use jsonb and movie routes.
 const app = express();
 app.use(express.json());    //Without this, the body will be undefined
