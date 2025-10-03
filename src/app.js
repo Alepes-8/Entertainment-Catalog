@@ -1,22 +1,47 @@
-import express from "express"
+// server.js
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv";
 import routes from "./routes/routes.js"
 
 //Create application and set it to use jsonb and movie routes.
-const app = express();
-app.use(express.json());    //Without this, the body will be undefined
-app.use("movies", routes);
+dotenv.config();
 
+const app = express();
+
+// ----------------- Middleware -----------------
+app.use(cors());
+app.use(express.json());    //Without this, the body will be undefined
+
+// ----------------- Routes -----------------
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
+
+app.use("/entertainment", routes);
+
+// ----------------- MongoDB Connection -----------------
 const PORT = process.env.PORT || 5000
+const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/entertainment";
 
 // Only connect to Mongo if not in test 
-// TODO adjust the mongoose.connect address when the api isn't running localy anymore, but on Railway or render.
 if (process.env.NODE_ENV !== "test") {
-  mongoose.connect("mongodb://localhost:27017/mini_api", { 
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }).then(() => {
-    app.listen(PORT, () => console.log(`Server running on ${PORT}`));
-  });
+  if (!MONGO_URI) {
+    console.error("❌ MONGO_URI is not defined");
+    process.exit(1);
+  }
+
+  mongoose.connect(MONGO_URI)
+    .then(() => {
+      console.log("✅ MongoDB connected");
+      app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+    })
+    .catch((err) => {
+      console.error("❌ MongoDB connection error:", err);
+      process.exit(1); // Stop server if DB connection fails
+    });
 }
 
+// ----------------- Export app for testing -----------------
 export default app

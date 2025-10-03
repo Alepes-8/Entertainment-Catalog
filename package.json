@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "An API to catalog movies a user is watching and track titles available across multiple streaming services.",
   "main": "index.js",
+  "type": "module",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "keywords": [],
   "author": "",
