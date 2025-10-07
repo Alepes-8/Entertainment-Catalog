@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import routes from "./routes/routes.js"
+import { swaggerUi, swaggerSpec } from "../swagger/swaggerConfig.js";
+import YAML from "yamljs";
 
 //Create application and set it to use jsonb and movie routes.
 dotenv.config();
@@ -13,6 +15,13 @@ const app = express();
 // ----------------- Middleware -----------------
 app.use(cors());
 app.use(express.json());    //Without this, the body will be undefined
+
+
+// ----------------- Setup swagger ui -----------------
+// This runs on http://localhost:5000/api-docs
+const swaggerDocument = YAML.load("../swagger/src/routes/openapi.yaml");
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 // ----------------- Routes -----------------
 app.get("/", (req, res) => {
