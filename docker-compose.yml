@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports: 
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  entertainment_api:
+    container_name: entertainment_api
+    build:
+      context: .
+      dockerfile: src/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - port=5000
+      - MONGO_URI=mongodb://mongo:27017/entertainment
+    depends_on:
+      - mongo
+      
+volumes:
+  mongo-data:
