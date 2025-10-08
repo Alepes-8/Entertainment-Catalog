@@ -1,0 +1,81 @@
+name: CI Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Sets up a virtual machine to run the job on (ubuntu-latest, windows-latest, macos-latest)
+    
+    services:
+      mongo:
+        image: mongo:5.0
+        ports: ['27017:27017']
+        options: >-
+          --health-cmd="mongosh --eval 'db.adminCommand(\"ping\")'"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # Wait for MongoDB port to be ready
+      - name: Wait for MongoDB
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y netcat-openbsd
+          until nc -z localhost 27017; do
+            echo "Waiting for MongoDB..."
+            sleep 2
+          done
+
+      # Setup the entertainment_api
+      - name: Install entertainment_api dependencies
+        working-directory: ./src
+        run: npm install
+      
+      - name: Start the entertainment_api
+        working-directory: ./src
+        env: 
+          MONGO_URI: mongodb://localhost:27017/entertainment
+        run: /
+          PORT=5000 node app.js > server.log 2>&1 &
+
+      - name: Debug Entertainment Catalog API startup
+        working-directory: ./src
+        run: |
+          sleep 5
+          cat server.log
+
+      - name: Show listening ports
+        run: |
+          sleep 5
+          sudo lsof -i -P -n | grep LISTEN
+
+      - name: Test API Health manually
+        run: |
+          curl -v http://localhost:5000/entertainment/health || true
+
+      - name: Wait for Recipe Manager API
+        working-directory: ./smallProjects/recipe_manager_api
+        run: |
+          npx wait-on --timeout 60000 http://localhost:5000/api/recipes/health
+
+      - name: Run Recipe Manager API tests with Newman
+        working-directory: ./smallProjects/recipe_manager_api
+        run: |
+          npm install newman
+          npx newman run postman/Entertainment_basis.postman_collection.json
+
