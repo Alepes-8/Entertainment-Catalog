@@ -1,0 +1,24 @@
+openapi: 3.0.3
+info:
+  title: Entertainment Catalog
+  description: Api in which returns the available movies and shows from different Entertainment services such as netflix.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:5000/entertainment
+    description: API service for Entertainment catalog
+
+paths:
+  /health:
+    get:
+      summary: Get the health status of the api
+      tags: [Entertainment]
+      responses: 
+        '200': 
+          description: The api is running and can be called
+
+components:
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
