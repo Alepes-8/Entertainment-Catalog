@@ -50,7 +50,7 @@ jobs:
         working-directory: ./src
         env: 
           MONGO_URI: mongodb://localhost:27017/entertainment
-        run: /
+        run: |
           PORT=5000 node app.js > server.log 2>&1 &
 
       - name: Debug Entertainment Catalog API startup
@@ -64,17 +64,13 @@ jobs:
           sleep 5
           sudo lsof -i -P -n | grep LISTEN
 
-      - name: Test API Health manually
+      - name: Wait for Entertainment API
+        working-directory: ./src
         run: |
-          curl -v http://localhost:5000/entertainment/health || true
+          npx wait-on --timeout 60000 http://localhost:5000/entertainment/health
 
-      - name: Wait for Recipe Manager API
-        working-directory: ./smallProjects/recipe_manager_api
-        run: |
-          npx wait-on --timeout 60000 http://localhost:5000/api/recipes/health
-
-      - name: Run Recipe Manager API tests with Newman
-        working-directory: ./smallProjects/recipe_manager_api
+      - name: Run Entertainment postman API tests with Newman
+        working-directory: .
         run: |
           npm install newman
           npx newman run postman/Entertainment_basis.postman_collection.json
