@@ -16,7 +16,7 @@ services:
       context: .
       dockerfile: ./src/Dockerfile
     environment:
-      MONGO_URI: mongodb://mongo:27017/entertainment_api
+      MONGO_URI: ${MONGO_URI}
       PORT: 5000
     depends_on:
       mongo:

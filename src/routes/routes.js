@@ -3,11 +3,12 @@ import Entertainment from "../models/entertainment.js"
 import Avalability from "../models/avalability.js";
 import Platforms from "../models/platforms.js";
 import Genres from "../models/genres.js";
+import {STATUS_CODES, MODEL_TYPES} from '../config/constants.js';
 
 const router = express.Router();
 
 router.get("/health", async(req, res) => {
-    res.status(200).json({status: 'ok'})
+    res.status(STATUS_CODES.SUCCESS).json({status: 'ok'})
 })
 
 /** TODO
@@ -20,7 +21,7 @@ router.get("/health", async(req, res) => {
  */
 
 router.get("/:title", async(req, res) => {
-    const entertainment = await Entertainment.find({title: req.params.title}).populate("Genre");
+    const entertainment = await Entertainment.find({title: req.params.title}).populate(MODEL_TYPES.GENRE);
     res.json(entertainment)
 })
 
