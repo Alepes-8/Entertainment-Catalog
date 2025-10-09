@@ -1,0 +1,29 @@
+name: SonarQube
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-and-analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - run: npm install
+
+      - name: Run unit tests
+        run: npm test
+
+      - name: Run SonarQube analysis
+        uses: sonarsource/sonarcloud-github-action@v2
+        with:
+          projectKey: my-node-api
+          organization: my-org
+          token: ${{ secrets.SONAR_TOKEN }}
