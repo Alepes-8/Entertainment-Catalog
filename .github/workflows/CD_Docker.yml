@@ -1,4 +1,4 @@
-name: CI/CD Docker Build and Push
+name: CD Docker Build and Push
 
 on:
   push:
@@ -22,8 +22,14 @@ jobs:
         run: docker compose -f docker-compose.yml build
 
       # Run tests in the test containers defined in docker-compose.yml
+      - name: Start dependent services
+        run: docker compose -f docker-compose.yml up -d mongo
+
       - name: Run tests
-        run: docker compose -f docker-compose.yml run --rm entertainment_api
+        run: docker compose run --rm -e NODE_ENV=test entertainment_api npm test
+
+      - name: Stop services
+        run: docker compose -f docker-compose.yml down
 
       - name: Push images to GHCR
         run: docker compose -f docker-compose.yml push
