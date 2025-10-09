@@ -27,8 +27,9 @@
   },
   "devDependencies": {
     "jest": "^30.2.0",
-    "supertest": "^6.3.3",
     "mockingoose": "^2.16.2",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "sonarqube-scanner": "^4.3.2",
+    "supertest": "^6.3.3"
   }
 }

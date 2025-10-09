@@ -22,6 +22,6 @@ services:
       - MONGO_URI=${MONGO_URI}
     depends_on:
       - mongo
-      
+          
 volumes:
   mongo-data:
