@@ -10,9 +10,11 @@ services:
       timeout: 5s
       retries: 5
 
+  
   entertainment_api:
     build:
-      context: .
+      context: ./src
+      dockerfile: Dockerfile
     environment:
       MONGO_URI: mongodb://mongo:27017/entertainment_api
       PORT: 5000
