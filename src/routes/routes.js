@@ -3,11 +3,12 @@ import Entertainment from "../models/entertainment.js"
 import Avalability from "../models/avalability.js";
 import Platforms from "../models/platforms.js";
 import Genres from "../models/genres.js";
+import { STATUS_CODES} from '../config/constants.js';
 
 const router = express.Router();
 
 router.get("/health", async(req, res) => {
-    res.status(200).json({status: 'ok'})
+    res.status(STATUS_CODES.SUCCESS).json({status: 'ok'})
 })
 
 /** TODO

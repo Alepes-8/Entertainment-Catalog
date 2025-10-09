@@ -8,6 +8,7 @@ import { swaggerUi, swaggerSpec } from "../swagger/swaggerConfig.js";
 import YAML from "yamljs";
 import { fileURLToPath } from "url";
 import path from "path";
+import { DB_URI, ENV_PORT } from 'config/config.js';
 
 //Create application and set it to use jsonb and movie routes.
 dotenv.config();
@@ -37,8 +38,8 @@ app.get("/", (req, res) => {
 app.use("/entertainment", routes);
 
 // ----------------- MongoDB Connection -----------------
-const PORT = process.env.PORT || 5000
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/entertainment";
+const PORT = ENV_PORT || 5000
+const MONGO_URI = DB_URI || "mongodb://localhost:27017/entertainment";
 
 // Only connect to Mongo if not in test 
 if (process.env.NODE_ENV !== "test") {
