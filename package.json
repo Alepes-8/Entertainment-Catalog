@@ -8,7 +8,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "start": "node src/app.js"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,9 @@
     "yamljs": "^0.3.0"
   },
   "devDependencies": {
+    "jest": "^30.2.0",
+    "supertest": "^6.3.3",
+    "mockingoose": "^2.16.2",
     "nodemon": "^3.1.10"
   }
 }

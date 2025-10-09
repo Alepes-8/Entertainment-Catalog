@@ -31,7 +31,7 @@ console.log("📘 Swagger docs available at: http://localhost:5000/api-docs");
 
 // ----------------- Routes -----------------
 app.get("/", (req, res) => {
-  res.send("API is running...");
+  res.send("Entertainment API is running...");
 });
 
 app.use("/entertainment", routes);
