@@ -75,6 +75,10 @@ jobs:
           npm install newman
           npx newman run postman/Entertainment_basis.postman_collection.json
 
+# Stop earlier containers as they are not needed for the following tests.
+      - name: Clean up old containers
+        run: docker ps -aq | xargs -r docker rm -f
+
 # Run docker test
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
