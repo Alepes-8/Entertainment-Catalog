@@ -22,14 +22,8 @@ jobs:
         run: docker compose -f docker-compose.yml build
 
       # Run tests in the test containers defined in docker-compose.yml
-      - name: Start dependent services
-        run: docker compose -f docker-compose.yml up -d mongo
-
       - name: Run tests
         run: docker compose -f docker-compose.yml run --rm entertainment_api
-
-      - name: Stop services
-        run: docker compose -f docker-compose.yml down
 
       - name: Push images to GHCR
         run: docker compose -f docker-compose.yml push
