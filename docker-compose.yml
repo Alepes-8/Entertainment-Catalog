@@ -14,6 +14,7 @@ services:
     build:
       context: .
       dockerfile: src/Dockerfile
+    image: ghcr.io/alepes-8/entertainment_api:latest # The image name to be used when pushing to GHCR
     ports:
       - "5000:5000"
     environment:

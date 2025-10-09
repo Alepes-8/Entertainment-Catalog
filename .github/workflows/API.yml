@@ -75,3 +75,20 @@ jobs:
           npm install newman
           npx newman run postman/Entertainment_basis.postman_collection.json
 
+# Run docker test
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Install docker-compose
+        run: |
+          sudo curl -L "https://github.com/docker/compose/releases/download/v2.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose
+          docker-compose --version
+
+      - name: Run Dockerized Tests
+        run: |
+          # Build and start all services, stop all containers when one exits
+          docker-compose -f ./docker-compose.test.yml up --build --abort-on-container-exit
+          
+          # Tear down containers and volumes after tests
+          docker-compose -f ./docker-compose.test.yml down --volumes
