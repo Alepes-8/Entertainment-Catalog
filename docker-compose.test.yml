@@ -13,8 +13,8 @@ services:
   
   entertainment_api:
     build:
-      context: ./src
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./src/Dockerfile
     environment:
       MONGO_URI: mongodb://mongo:27017/entertainment_api
       PORT: 5000
