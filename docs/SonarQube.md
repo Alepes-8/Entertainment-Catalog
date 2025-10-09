@@ -5,3 +5,7 @@ When running the project it is nessausary to have the right dependencies. So bef
 ```
 npm install --save-dev sonarqube-scanner
 ```
+
+---
+
+## SonarCloud
