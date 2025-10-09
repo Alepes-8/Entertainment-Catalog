@@ -1,15 +1,17 @@
-name: SonarQube
+name: SonarCloud Analysis
 
 on:
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
-  test-and-analyze:
+  sonarcloud:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Required for full analysis
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -17,13 +19,15 @@ jobs:
           node-version: 18
 
       - run: npm install
+      - run: npm test -- --coverage
 
-      - name: Run unit tests
-        run: npm test
-
-      - name: Run SonarQube analysis
+      - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@v2
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io
         with:
-          projectKey: my-node-api
-          organization: my-org
-          token: ${{ secrets.SONAR_TOKEN }}
+          args: >
+            -Dsonar.projectKey=Alepes-8_Entertainment-Catalog
+            -Dsonar.organization=alepes-8
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
