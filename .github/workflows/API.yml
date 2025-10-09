@@ -85,10 +85,16 @@ jobs:
           sudo chmod +x /usr/local/bin/docker-compose
           docker-compose --version
 
+      - name: Show current directory
+        run: |
+          pwd
+          ls -la
+
       - name: Run Dockerized Tests
+        working-directory: .
         run: |
           # Build and start all services, stop all containers when one exits
-          docker-compose -f ./docker-compose.test.yml up --build --abort-on-container-exit
+          docker-compose -f docker-compose.test.yml up --build --abort-on-container-exit
           
           # Tear down containers and volumes after tests
-          docker-compose -f ./docker-compose.test.yml down --volumes
+          docker-compose -f docker-compose.test.yml down --volumes
