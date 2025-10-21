@@ -14,16 +14,20 @@ export const MODEL_TYPES = {
 
 export const ENTERTAINMENT_TYPES = {
   MOVIE: "movie",
-  SERIES: "series"
+  SERIES: "tv_series"
 }
 
 export const API_WAIT_TIMES = {
   WATCHMODE_SOURCE_UPDATE: 7 * 24 * 60 * 60 * 1000, // 7 days
-  WATCHMODE_PLATFORM_COLLECTION_UPDATE: 24 * 60 * 60 * 1000,
-
+  WATCHMODE_PLATFORM_COLLECTION_UPDATE: 24 * 60 * 60 * 1000, // 24 hours
 }
 
 export const APIS_CALLS =  {
-  WATCHMODE_SOURCE_UPDATE: 'getSourceIdsFromWatchmodeApi',
-  WATCHMODE_PLATFORM_COLLECTION_UPDATE: "getPlatformEntertainmentFromWatchmodeAPI",
+  WATCHMODE_PLATFORMS_UPDATE: 'getSourceIdsFromWatchmodeApi',
+  WATCHMODE_PLATFORM_REGION_UPDATE: "getWatchmodeAPIFrom",
+}
+
+export const DEFUALT_VALUES = {
+   PLATFORM: "Netflix",
+   REGION: "US"
 }

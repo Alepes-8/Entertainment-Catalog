@@ -7,9 +7,10 @@ import Platforms from "../models/platforms.js"
 import Genres from "../models/genres.js";
 import Avalability from "../models/avalability.js"
 import ApiCalled from "../models/apiCalled.js";
-import {STATUS_CODES, API_WAIT_TIMES, APIS_CALLS} from '../config/constants.js';
+import {STATUS_CODES, API_WAIT_TIMES, APIS_CALLS, DEFUALT_VALUES} from '../config/constants.js';
 import { WATCHMODE_API_KEY } from '../config/config.js';
 import apiCalled from "../models/apiCalled.js";
+import entertainment from "../models/entertainment.js";
 
 export const healthCheck = async(req, res) => {
     res.status(STATUS_CODES.SUCCESS).json({status: 'ok'})
@@ -31,6 +32,7 @@ export const findMoviesOnFilter = async(req , res) => {
         const entertainment = await Entertainment.find({filter})
             .limit(30)  // Set a limit, otherwise the avalability filtering will be exessive
             .sort(asc)
+            .lean()
             .exec();    // this provides a higher level of error message descriptions.
         
         // Get the avalability status of each movie found within the filter.
@@ -53,85 +55,101 @@ export const findMoviesOnFilter = async(req , res) => {
 export const uppdateEntertainemntData = async(req, res) => {
     try{
         // Check the database when the last api call was made for this platform
-        console.log(APIS_CALLS.WATCHMODE_PLATFORM_COLLECTION_UPDATE + `_${req.param.platform}`)
-        const latestUpdate = await ApiCalled.findOne({apiName: APIS_CALLS.WATCHMODE_PLATFORM_COLLECTION_UPDATE + `_${req.param.platform}`})
         const currentTime = new Date();
+        const latestUpdate = await ApiCalled.findOne({
+            apiName: APIS_CALLS.WATCHMODE_PLATFORM_REGION_UPDATE + `_${req.query.platform}_${req.query.region}`
+        }).lean();
 
-        if(currentTime - latestUpdate.lastCalled < API_WAIT_TIMES.WATCHMODE_PLATFORM_COLLECTION_UPDATE){
+        const lastCall = latestUpdate?.lastCalled || 0; //Catch If the region and platform combination hasn't been made before
+
+        if(currentTime -  new Date(lastCall) < API_WAIT_TIMES.WATCHMODE_PLATFORM_COLLECTION_UPDATE){
             res.status(STATUS_CODES.API_WAIT_CALL_TIME).json({message: "The api call for watchmode platforms data was done resently."});
             return;
         }
 
         // Find the source ID for the platform that is desire to be updated.
-        console.log(req.param);
-        const platformData = await Platforms.find({name : req.param.platform});
-
-        console.log(platformData);
-
-        if((await platformData).length === 0){ //todo verify that this is correct I believe the platform.length may check incorrectly.
+        const platformData = await Platforms.findOne({name: {$in: req.query.platform.toLowerCase()}}).lean();
+        if((await platformData).length === 0){
             res.status(STATUS_CODES.NOT_FOUND).json({message: "Platform not found"})
-        }
-
+            return;
+        };
+        
         // Set your API key here
-        /*
         const apiKey = WATCHMODE_API_KEY;
-        const sourceIds = platformData.watchModeSourceId;
-        const url = `https://api.watchmode.com/v1/list-titles/?apiKey=${apiKey}&source_ids=${sourceIds}&regions=SE`;
+        const sourceIds = platformData?.watchModePlatformId;
+        const region = req.query.region || DEFUALT_VALUES.REGION;
+        
+        const url = `https://api.watchmode.com/v1/list-titles/?apiKey=${apiKey}&source_ids=${sourceIds}&regions=${region}`; // TODO add different regions, so repeate for multiple regions
 
         const response = await fetch(url);
         const jsonResponse = await response.json();
-        console.log(json);
-        */
-        /*//get the genres from the response and upsert them into the genres collection
-        const combinedGenres = [...new Set(jsonResponse.flatMap(p => p.genres))];
-        
-        const filteredGenres = await json.map(genre => ({
-            updateOne: {
-                filter: {name: genre},
-                update: { $set: {name: genre} },
-                upsert: true
-            }
-        }));
-
-        await Genres.bulkWrite(filteredGenres);
-        const dbGenres = await Genres.find({name: {$in: combinedGenres}});*/
-        /*
         // do something with myJson
-        const filteredData = await jsonResponse.map(entertainment => ({
+        const filteredData = await jsonResponse.titles.map(entertainment => ({
             updateOne:{
-                filter: {
-                    {watchMongodEntertainemntID: entertainment.id}//todo add form of id 
+                filter: { 
+                    watchMongodEntertainemntID: entertainment.id//todo add form of id 
                 },
-            
                 update: {
                     $set: {
-                        title: entertainment.title,
-                        entertainmentType: entertainment.type,
-                        // genre: entertainment.genre.map(g => dbGenres.find(dbg => dbg.name === g)?._id), //TODO no current implementation of genres in the watchmode api response
-                        releaseYear: entertainment.year , 
-                        watchMongodEntertainemntID, entertainment.id
+                        title: entertainment.title.toLowerCase(),
+                        entertainmentType: entertainment.type.toLowerCase(),
+                        releaseYear: entertainment.year, 
+                        watchMongodEntertainemntID: entertainment.id
                     }
                 },
                 upsert: true    
             }
         }));
 
-*/
-        // Get the data from the api
+        await Entertainment.bulkWrite(filteredData)
+        const createdEntertainmentData = await Entertainment.find({
+            watchMongodEntertainemntID: { $in: jsonResponse.titles.map(entertainment => entertainment.id) }
+        }).lean();
 
-        // update and enter new data into the server based on the data from the api
-        res.status(STATUS_CODES.SUCCESS).json({message: "Update function called"})
+        // Get get the ids for the specific filttered data above.
+        const filteredAvailability = await createdEntertainmentData.map(entertainment => ({
+            updateOne: {
+                filter: {
+                    $and: [
+                        {entertainmentId: entertainment._id},
+                        {platformId: platformData._id},
+                        {region: region}
+                    ]
+                },
+                update: {
+                    $set: {
+                        entertainmentId: entertainment._id,
+                        platformId: platformData._id,
+                        region: region,
+                        available: true
+                    }
+                },
+                upsert: true
+            }
+        }))
+        await Avalability.bulkWrite(filteredAvailability)
+
+        await ApiCalled.updateOne(
+            {apiName: APIS_CALLS.WATCHMODE_SOURCE_UPDATE}, // Filter to find the name
+            {$set: {    // If the name is found, update the last called time
+                lastCalled: currentTime
+            }},
+            { upsert: true } // If the name isn't found, upsert tells updateOne to create new entry.
+        );
+        res.status(STATUS_CODES.SUCCESS).json({message: "Entertainemnt data updated successfully. For @platform: " + req.query.platform + " and region: " + region});
     }catch(err){
         res.status(STATUS_CODES.SERVER_ERROR).json({error: err.message})
     }
 }
 
-export const getSourceIdsFromWatchmodeApi = async(req, res) => {
+export const getPlatformIdsFromWatchmodeApi = async(req, res) => {
     try{
-        const lastCalledEntry = await ApiCalled.findOne({apiName: APIS_CALLS.WATCHMODE_SOURCE_UPDATE});
         const currentTime = new Date();
+        const lastCalledEntry = await ApiCalled.findOne({apiName: APIS_CALLS.WATCHMODE_SOURCE_UPDATE});
+        
+        const lastCall = lastCalledEntry?.lastCalled || 0; //Catch If the region and platform combination hasn't been made before
 
-        if(currentTime - lastCalledEntry.lastCalled < API_WAIT_TIMES.WATCHMODE_SOURCE_UPDATE){
+        if(currentTime -  new Date(lastCall) < API_WAIT_TIMES.WATCHMODE_SOURCE_UPDATE){
             res.status(STATUS_CODES.API_WAIT_CALL_TIME).json({message: "The api call for watchmode sources was done resently."});
             return;
         };
@@ -140,31 +158,30 @@ export const getSourceIdsFromWatchmodeApi = async(req, res) => {
         const apiKey = WATCHMODE_API_KEY;
 
         const url = `https://api.watchmode.com/v1/sources/?apiKey=${apiKey}`;
-
+        
         const response = await fetch(url);
         const jsonBody = await response.json();
-
+        
         // Process and upsert the data into the Platforms collection
-        const filteredData = await jsonBody.map(item => ({
+        const filteredDatas = DEFUALT_VALUES.TEST.map(item => ({
             updateOne: {
                 filter: {
                      $or: [
-                        { watchModeSourceId: item.id }, // match existing by ID
-                        { name: item.name, watchModeSourceId: {$ne: item.id}}             // or match existing by name
+                        { watchModePlatformId: item.id }, // match existing by ID
+                        { name: item.name.toLowerCase(), watchModePlatformId: {$ne: item.id}}             // or match existing by name
                     ]
                 },
                 update: {
                     $set:  {
-                        name: item.name, 
-                        watchModeSourceId: item.id
+                        name: item.name.toLowerCase(), 
+                        watchModePlatformId: item.id
                     }
                 },
                 upsert: true
             }
         }));
-
-        await Platforms.bulkWrite(filteredData);
-
+        
+        await Platforms.bulkWrite(filteredDatas);
         await ApiCalled.updateOne(
             {apiName: APIS_CALLS.WATCHMODE_SOURCE_UPDATE}, // Filter to find the name
             {$set: {    // If the name is found, update the last called time
@@ -184,5 +201,5 @@ export default {
     healthCheck, 
     findMoviesOnFilter, 
     uppdateEntertainemntData, 
-    getSourceIdsFromWatchmodeApi
+    getPlatformIdsFromWatchmodeApi
 };
