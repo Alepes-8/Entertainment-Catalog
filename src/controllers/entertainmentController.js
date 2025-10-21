@@ -20,29 +20,32 @@ export const findMoviesOnFilter = async(req , res) => {
     try{
         const filter = {};
         // we will not add the filter unless it exist. This is because setting it to null would still count as a value and would be searched for.
-        if(req.body.title) filter.title = req.body.title;
-        if(req.body.entertainmentType) filter.entertainmentType = req.body.entertainmentType;
-        if(req.body.releaseYear) filter.releaseYear = req.body.releaseYear;
+        if(req.query.title) filter.title = req.query.title;
+        if(req.query.type) filter.entertainmentType = req.query.type;
+        if(req.query.releaseYear) filter.releaseYear = req.query.releaseYear;
         
-        if (req.body.genre?.length > 0) {
-            const genres = await Genres.find( { name: { $in: req.body.genre } } ).exec();
+        /*if (req.query.genre?.length > 0) {
+            const genres = await Genres.find( { name: { $in: req.query.genre } } ).exec();
             filter.genre = { $in: genres.map(g => g._id) }; // We create and add $in operation as this will be included in the filter object
-        };
-
-        const entertainment = await Entertainment.find({filter})
+        };*/
+        console.log("Filter being used: ", filter);
+        const entertainment = await Entertainment.find(filter)
             .limit(30)  // Set a limit, otherwise the avalability filtering will be exessive
-            .sort(asc)
+            //.sort(asc)
             .lean()
             .exec();    // this provides a higher level of error message descriptions.
         
+        console.log("Entertainment found: ", entertainment);
         // Get the avalability status of each movie found within the filter.
         const availabilityFilter = {}
-        if(req.body.region) availabilityFilter.regions = req.body.region;
+        if(req.query.region) availabilityFilter.regions = req.query.region;
 
-        if(req.body.platform?.length > 0){
+        if(req.query.platform?.length > 0){
             const platforms = await Platforms.find({ name: {$in : requestAnimationFrame.body.platform}}).exec();
             availabilityFilter.platform = {$in : platforms.map(p => p._id)};
         }
+
+        availabilityFilter.entertainmentId = {$in: entertainment.map(e => e._id)};
 
         const avalabilities = await Avalability.find(availabilityFilter);
         
@@ -161,9 +164,9 @@ export const getPlatformIdsFromWatchmodeApi = async(req, res) => {
         
         const response = await fetch(url);
         const jsonBody = await response.json();
-        
+
         // Process and upsert the data into the Platforms collection
-        const filteredDatas = DEFUALT_VALUES.TEST.map(item => ({
+        const filteredDatas = jsonBody.map(item => ({
             updateOne: {
                 filter: {
                      $or: [
