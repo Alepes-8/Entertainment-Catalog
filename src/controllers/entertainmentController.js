@@ -28,18 +28,16 @@ export const findMoviesOnFilter = async(req , res) => {
             const genres = await Genres.find( { name: { $in: req.query.genre } } ).exec();
             filter.genre = { $in: genres.map(g => g._id) }; // We create and add $in operation as this will be included in the filter object
         };*/
-        console.log("Filter being used: ", filter);
         const entertainment = await Entertainment.find(filter)
             .limit(30)  // Set a limit, otherwise the avalability filtering will be exessive
             //.sort(asc)
             .lean()
             .exec();    // this provides a higher level of error message descriptions.
         
-        console.log("Entertainment found: ", entertainment);
         // Get the avalability status of each movie found within the filter.
         const availabilityFilter = {}
-        if(req.query.region) availabilityFilter.regions = req.query.region;
-
+        if(req.query.region) availabilityFilter.region = req.query.region;
+        
         if(req.query.platform?.length > 0){
             const platforms = await Platforms.find({ name: {$in : requestAnimationFrame.body.platform}}).exec();
             availabilityFilter.platform = {$in : platforms.map(p => p._id)};
