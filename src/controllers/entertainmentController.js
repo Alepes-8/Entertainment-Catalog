@@ -7,13 +7,13 @@ import Platforms from "../models/platforms.js"
 import Genres from "../models/genres.js";
 import Avalability from "../models/avalability.js"
 import ApiCalled from "../models/apiCalled.js";
-import {STATUS_CODES, API_WAIT_TIMES, APIS_CALLS, DEFUALT_VALUES} from '../config/constants.js';
+import {STATUS_CODES, API_WAIT_TIMES, APIS_CALLS, DEFUALT_VALUES, STATUS_MESSAGES} from '../config/constants.js';
 import { WATCHMODE_API_KEY } from '../config/config.js';
 import apiCalled from "../models/apiCalled.js";
 import entertainment from "../models/entertainment.js";
 
 export const healthCheck = async(req, res) => {
-    res.status(STATUS_CODES.SUCCESS).json({status: 'ok'})
+    res.status(STATUS_CODES.SUCCESS).json({status: STATUS_MESSAGES.OK})
 }
 
 export const findMoviesOnFilter = async(req , res) => {
@@ -38,11 +38,14 @@ export const findMoviesOnFilter = async(req , res) => {
         const availabilityFilter = {}
         if(req.query.region) availabilityFilter.region = req.query.region;
         
+        //Match the platform ids to the platform names and change id to platform name
+        // Use the input platforms used for the search action, to add a filter to only find those that match given platforms.
         if(req.query.platform?.length > 0){
             const platforms = await Platforms.find({ name: {$in : requestAnimationFrame.body.platform}}).exec();
             availabilityFilter.platform = {$in : platforms.map(p => p._id)};
         }
 
+        //We could find more availablefilter data than we need, so this filters so we only find those that share entertainment ids with the previously found once
         availabilityFilter.entertainmentId = {$in: entertainment.map(e => e._id)};
 
         const avalabilities = await Avalability.find(availabilityFilter);

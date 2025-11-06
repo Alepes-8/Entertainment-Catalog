@@ -5,6 +5,10 @@ export const STATUS_CODES = {
   SERVER_ERROR: 500,
 };
 
+export const STATUS_MESSAGES = {
+  OK: "ok",
+}
+
 export const MODEL_TYPES = {
   GENRE: "Genre",
   PLATFORM: "Platform",
