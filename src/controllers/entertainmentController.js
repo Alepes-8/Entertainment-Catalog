@@ -86,22 +86,22 @@ export const uppdateEntertainemntData = async(req, res) => {
         }
 
         // Find the source ID for the platform that is desire to be updated.
-        const platformData = await Platforms.findOne({name: {$in: req.query.platform.toLowerCase()}}).lean();
+        const platformData = await Platforms.findOne({name: {$in: filter.platform.toLowerCase()}}).lean();
         if((await platformData).length === 0){
             res.status(STATUS_CODES.NOT_FOUND).json({message: STATUS_MESSAGES.PLATFORM_NOT_FOUND});
             return;
         };
-        
+
         // Set your API key here
         const apiKey = WATCHMODE_API_KEY;
         const sourceIds = platformData?.watchModePlatformId;
-        const region = req.query.region || DEFUALT_VALUES.REGION;
         
-        const url = `https://api.watchmode.com/v1/list-titles/?apiKey=${apiKey}&source_ids=${sourceIds}&regions=${region}`; // TODO add different regions, so repeate for multiple regions
+        const url = `https://api.watchmode.com/v1/list-titles/?apiKey=${apiKey}&source_ids=${sourceIds}&regions=${filter.region}`; // TODO add different regions, so repeate for multiple regions
 
         const response = await fetch(url);
         const jsonResponse = await response.json();
         // do something with myJson
+
         const filteredData = await jsonResponse.titles.map(entertainment => ({
             updateOne:{
                 filter: { 
@@ -120,6 +120,8 @@ export const uppdateEntertainemntData = async(req, res) => {
         }));
 
         await Entertainment.bulkWrite(filteredData)
+
+        // Get the created entertainment data to create the availability data.
         const createdEntertainmentData = await Entertainment.find({
             watchMongodEntertainemntID: { $in: jsonResponse.titles.map(entertainment => entertainment.id) }
         }).lean();
@@ -131,20 +133,21 @@ export const uppdateEntertainemntData = async(req, res) => {
                     $and: [
                         {entertainmentId: entertainment._id},
                         {platformId: platformData._id},
-                        {region: region}
+                        {region: filter.region}
                     ]
                 },
                 update: {
                     $set: {
                         entertainmentId: entertainment._id,
                         platformId: platformData._id,
-                        region: region,
+                        region: filter.region,
                         available: true
                     }
                 },
                 upsert: true
             }
         }))
+      
         await Avalability.bulkWrite(filteredAvailability)
 
         await ApiCalled.updateOne(
@@ -154,7 +157,7 @@ export const uppdateEntertainemntData = async(req, res) => {
             }},
             { upsert: true } // If the name isn't found, upsert tells updateOne to create new entry.
         );
-        res.status(STATUS_CODES.SUCCESS).json({message: "Entertainemnt data updated successfully. For @platform: " + req.query.platform + " and region: " + region});
+        res.status(STATUS_CODES.SUCCESS).json({message: "Entertainemnt data updated successfully. For platform: " + filter.platform + " and region: " + filter.region});
     }catch(err){
         res.status(STATUS_CODES.SERVER_ERROR).json({error: err.message})
     }

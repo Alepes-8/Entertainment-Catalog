@@ -9,7 +9,7 @@ import request from "supertest";
 import mongoose from "mongoose";
 import {STATUS_MESSAGES, ENTERTAINMENT_TYPES, APIS_CALLS, DEFUALT_VALUES} from "../../../src/config/constants.js"
 import avalability from "../../../src/models/avalability";
-import { fn } from 'jest-mock';
+import { fn, spyOn} from 'jest-mock';
 
 describe("Entertainment routes tests", async => {
     beforeEach(() => {
@@ -122,7 +122,7 @@ describe("Entertainment routes tests", async => {
         //Assert
         expect(res.body.message).toBe(STATUS_MESSAGES.ERROR_ENTERTAINMENT_UPDATE_RECENTLY_CALLED);
     });
-/*
+
     it("POST /updatePlatformForRegion input platform does not exist", async () => {
         //Arrange
         const currentDate = new Date();
@@ -135,15 +135,10 @@ describe("Entertainment routes tests", async => {
             }
         ];
 
-        const platforms = [
-            {
-                name: "HBO Max", 
-                watchModePlatformId: 2
-            }
-        ];
+        const platforms = [];
 
-        mockingoose(ApiCalled).toReturn(apiCalled, "find");
-        mockingoose(Platforms).toReturn(platforms, "find");
+        mockingoose(ApiCalled).toReturn(apiCalled, "findOne");
+        mockingoose(Platforms).toReturn(platforms, "findOne");
 
         //Act
         const res = await request(app).post(`/entertainment/updatePlatformForRegion?platform=${platform}&region=${region}`); //TODO add aditional setting into the get.
@@ -155,12 +150,28 @@ describe("Entertainment routes tests", async => {
     it("POST /updatePlatformForRegion should add entertainment types into entertainment database.", async () => {
         //Arrange
         const currentDate = new Date();
-        const mockData = {
-            title: "Test Movie", 
-            type: "movie",
-            year: 2024,
-            id: 12345
-        };
+        const entertainmentId = new mongoose.Types.ObjectId();
+        const platformId = new mongoose.Types.ObjectId();
+        const testData = {
+                title: "Test Movie", 
+                type: "movie",
+                year: 2024,
+                movie_id: 12345,
+                platform: DEFUALT_VALUES.PLATFORM,
+                region: DEFUALT_VALUES.REGION,
+                entertainmentType: ENTERTAINMENT_TYPES.MOVIE
+        }
+        const mockData = {"titles": [
+            {
+                "id": 3241768,
+                "title": testData.title,
+                "year": testData.year,
+                "imdb_id": "tt27987047",
+                "tmdb_id": 225647,
+                "tmdb_type": "tv",
+                "type": testData.entertainmentType,
+            },
+        ]};
 
         // Mock the fetch response
         global.fetch.mockResolvedValue({
@@ -169,53 +180,63 @@ describe("Entertainment routes tests", async => {
 
         const apiCalled = [
             {
-                apiName: "test",
+                apiName: APIS_CALLS.WATCHMODE_PLATFORM_REGION_UPDATE,
                 lastCalled: currentDate
             }
-        ]
+        ];
 
-        const platforms = {
-            name: {type: String, required: true, unique: true}, 
-            watchModePlatformId: {type: Number, requred: true, unique: true}
-        }
+        const platforms = [
+            {
+                _id: platformId,
+                name: testData.platform, 
+                watchModePlatformId: 1
+            }
+        ];
 
-        const entertainment = {
-            title: {type: String, required: true}, 
-            entertainmentType: {type: String, enum: [ENTERTAINMENT_TYPES.MOVIE, ENTERTAINMENT_TYPES.SERIES], required: true},
-            genre: [{type: mongoose.Schema.Types.ObjectId, ref: MODEL_TYPES.GENRE}], 
-            releaseYear: {type: Number},
-            lastUpdate: { type: Date, default: Date.now },
-            watchMongodEntertainemntID: {type: Number, unique: true, required: true}
-        }
+        const entertainment = [{
+            _id: entertainmentId,
+            title: testData.title, 
+            entertainmentType: testData.entertainmentType,
+            releaseYear: testData.year,
+            lastUpdate: currentDate,
+            watchMongodEntertainemntID: mockData.titles[0].id
+        }];
+        
+        const availability = [
+            {
+                entertainmentId: entertainmentId,
+                platformId: [platformId],
+                region: "SE",
+                available: true
+            },
+            {
+                entertainmentId: entertainmentId,
+                platformId: [platformId],
+                region: "US",
+                available: true
+            }
+        ];
 
-        const Avalability = {
-            entertainmentId: {type: mongoose.Schema.Types.ObjectId, ref: MODEL_TYPES.ENTERTAINEMNT, required: true },
-            platformId: [{type: mongoose.Schema.Types.ObjectId, ref: MODEL_TYPES.PLATFORM, required: true }],
-            region: {type: String, required: true, match: /^[A-Z]{2}$/},
-            available: Boolean
-        }
 
-        const entertainmentresponse = {
-            title: {type: String, required: true}, 
-            entertainmentType: {type: String, enum: [ENTERTAINMENT_TYPES.MOVIE, ENTERTAINMENT_TYPES.SERIES], required: true},
-            genre: [{type: mongoose.Schema.Types.ObjectId, ref: MODEL_TYPES.GENRE}], 
-            releaseYear: {type: Number},
-            lastUpdate: { type: Date, default: Date.now },
-            watchMongodEntertainemntID: {type: Number, unique: true, required: true}
-        }
-
-        mockingoose(ApiCalled).toReturn(apiCalled, "find");
-        mockingoose(Platforms).toReturn(platforms, "find");
+        mockingoose(ApiCalled).toReturn(apiCalled, "findOne");
+        mockingoose(Platforms).toReturn(platforms, "findOne");
         mockingoose(Entertainment).toReturn(entertainment, "find");
-        mockingoose(Avalability).toReturn(avalability, "find");
-        mockingoose(entertainment).toReturn(entertainmentresponse, "find");
+        const mockResult = { acknowledged: true, modifiedCount: 1 };
+        spyOn(Entertainment, 'bulkWrite').mockResolvedValue(mockResult);
+
+        const mockResult2 = { acknowledged: true, modifiedCount: 1 };
+        spyOn(Avalability, 'bulkWrite').mockResolvedValue(mockResult2);
+        mockingoose(Avalability).toReturn(availability, "find");
+
+        mockingoose(Avalability).toReturn("UpdateOne");
 
         //Act
-        const res = await request(app).get("/entertainment/updatePlatformForRegion");
+        const res = await request(app).post("/entertainment/updatePlatformForRegion");
 
         //Assert
+        expect(res.body.message).toBe("Entertainemnt data updated successfully. For platform: " + testData.platform + " and region: " + testData.region);
     });
-    */
+    
 /*
     it("GET /updatePlatformIds should aquire and add platforms and corresponding watchmode id to the database.",() => {
         //Arrange

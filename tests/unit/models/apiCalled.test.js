@@ -13,7 +13,7 @@ describe("Unit test for ApiCalled model", async => {
             apiName: "testingCall",
             lastCalled: newDate
         }
-        mockingoose(ApiCalled).toReturn(apicalledData, "save");
+        mockingoose(ApiCalled).toReturn(apicalledData, "save"); 
 
         //Act
         const apiCalled = new ApiCalled(apicalledData);
