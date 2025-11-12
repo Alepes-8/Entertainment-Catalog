@@ -7,6 +7,8 @@ export const STATUS_CODES = {
 
 export const STATUS_MESSAGES = {
   OK: "ok",
+  ERROR_ENTERTAINMENT_UPDATE_RECENTLY_CALLED: "The api call for watchmode entertainment data was done resently.",
+  PLATFORM_NOT_FOUND: "The input platform does not exist in the database.",
 }
 
 export const MODEL_TYPES = {

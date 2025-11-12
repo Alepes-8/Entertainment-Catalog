@@ -60,21 +60,35 @@ export const uppdateEntertainemntData = async(req, res) => {
     try{
         // Check the database when the last api call was made for this platform
         const currentTime = new Date();
+        const filter = {};
+
+        if(req.query.platform) {
+            filter.platform = req.query.platform;
+        }else {
+            filter.platform = DEFUALT_VALUES.PLATFORM;
+        }
+        if(req.query.region){
+            filter.region = req.query.region;
+        }else {
+            filter.region = DEFUALT_VALUES.REGION;
+        }
+
         const latestUpdate = await ApiCalled.findOne({
-            apiName: APIS_CALLS.WATCHMODE_PLATFORM_REGION_UPDATE + `_${req.query.platform}_${req.query.region}`
+            apiName: APIS_CALLS.WATCHMODE_PLATFORM_REGION_UPDATE + `_${filter.platform}_${filter.region}`
         }).lean();
+
 
         const lastCall = latestUpdate?.lastCalled || 0; //Catch If the region and platform combination hasn't been made before
 
         if(currentTime -  new Date(lastCall) < API_WAIT_TIMES.WATCHMODE_PLATFORM_COLLECTION_UPDATE){
-            res.status(STATUS_CODES.API_WAIT_CALL_TIME).json({message: "The api call for watchmode platforms data was done resently."});
+            res.status(STATUS_CODES.API_WAIT_CALL_TIME).json({message: STATUS_MESSAGES.ERROR_ENTERTAINMENT_UPDATE_RECENTLY_CALLED});
             return;
         }
 
         // Find the source ID for the platform that is desire to be updated.
         const platformData = await Platforms.findOne({name: {$in: req.query.platform.toLowerCase()}}).lean();
         if((await platformData).length === 0){
-            res.status(STATUS_CODES.NOT_FOUND).json({message: "Platform not found"})
+            res.status(STATUS_CODES.NOT_FOUND).json({message: STATUS_MESSAGES.PLATFORM_NOT_FOUND});
             return;
         };
         
