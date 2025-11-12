@@ -7,7 +7,7 @@ import Platforms from "../../../src/models/platforms.js";
 import bcrypt from "bcryptjs";
 import request from "supertest";
 import mongoose from "mongoose";
-import {STATUS_MESSAGES, ENTERTAINMENT_TYPES, APIS_CALLS, DEFUALT_VALUES} from "../../../src/config/constants.js"
+import {STATUS_MESSAGES, STATUS_CODES, ENTERTAINMENT_TYPES, APIS_CALLS, DEFUALT_VALUES} from "../../../src/config/constants.js"
 import avalability from "../../../src/models/avalability";
 import { fn, spyOn} from 'jest-mock';
 
@@ -92,11 +92,11 @@ describe("Entertainment routes tests", async => {
         const res = await request(app).get("/entertainment/search");
 
         // Assert
-        expect(res.statusCode).toBe(200);
+        expect(res.statusCode).toBe(STATUS_CODES.SUCCESS);
         const expectedEntertainment = JSON.parse(JSON.stringify(entertainments));
         expect(res.body[0]).toEqual(expectedEntertainment);
 
-        expect(res.statusCode).toBe(200);
+        expect(res.statusCode).toBe(STATUS_CODES.SUCCESS);
         expect(res.body[1].length).toBe(availability.length);
         expect(res.body[1][0].entertainmentId).toEqual(entertainmentId1.toString());
         expect(res.body[1][0].platformId).toEqual([platformId.toString()]);
@@ -120,6 +120,7 @@ describe("Entertainment routes tests", async => {
         const res = await request(app).post("/entertainment/updatePlatformForRegion");
 
         //Assert
+        expect(res.statusCode).toBe(STATUS_CODES.API_WAIT_CALL_TIME);
         expect(res.body.message).toBe(STATUS_MESSAGES.ERROR_ENTERTAINMENT_UPDATE_RECENTLY_CALLED);
     });
 
@@ -144,6 +145,7 @@ describe("Entertainment routes tests", async => {
         const res = await request(app).post(`/entertainment/updatePlatformForRegion?platform=${platform}&region=${region}`); //TODO add aditional setting into the get.
 
         //Assert
+        expect(res.statusCode).toBe(STATUS_CODES.NOT_FOUND);
         expect(res.body.message).toBe(STATUS_MESSAGES.PLATFORM_NOT_FOUND);
     });
 
@@ -234,15 +236,71 @@ describe("Entertainment routes tests", async => {
         const res = await request(app).post("/entertainment/updatePlatformForRegion");
 
         //Assert
+        expect(res.statusCode).toBe(STATUS_CODES.SUCCESS);
         expect(res.body.message).toBe("Entertainemnt data updated successfully. For platform: " + testData.platform + " and region: " + testData.region);
     });
     
-/*
-    it("GET /updatePlatformIds should aquire and add platforms and corresponding watchmode id to the database.",() => {
+    it("GET /updatePlatformIds should aquire and add platforms and corresponding watchmode id to the database.", async() => {
         //Arrange
+        const currentDate = new Date();
+        const platformId1 = new mongoose.Types.ObjectId();
+        const platformId2 = new mongoose.Types.ObjectId();
+
+        const mockData = [
+            {
+                "id": 1,
+                "name": "Netflix",
+                "type": "sub",
+                "regions": [
+                    "US"
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Hulu",
+                "type": "sub",
+                "regions": [
+                    "US"
+                ]
+            }
+        ];
+
+        // Mock the fetch response
+        global.fetch.mockResolvedValue({
+            json: fn().mockResolvedValue(mockData)
+        });
+
+        const apiCalled = [
+            {
+                apiName: APIS_CALLS.WATCHMODE_SOURCE_UPDATE + "extra",
+                lastCalled: currentDate
+            }
+        ];
+
+        const platforms = [
+            {
+                _id: platformId1,
+                name: mockData[0].name, 
+                watchModePlatformId: mockData[0].id
+            },
+            {
+                _id: platformId2,
+                name: mockData[1].name, 
+                watchModePlatformId: mockData[1].id
+            }
+        ];
+
+        mockingoose(ApiCalled).toReturn(apiCalled, "findOne");
+        const mockResult = { acknowledged: true, modifiedCount: 1 };
+        spyOn(Platforms, 'bulkWrite').mockResolvedValue(mockResult);
+        mockingoose(Platforms).toReturn(platforms, "find");
 
         //Act
-        
+        const res = await request(app).get("/entertainment/updatePlatformIds");
+
         //Assert
-    });    */
+        expect(res.statusCode).toBe(STATUS_CODES.SUCCESS);
+        const expectedPlatform = JSON.parse(JSON.stringify(platforms));
+        expect(res.body).toStrictEqual(expectedPlatform);
+    }); 
 })
