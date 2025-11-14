@@ -1,28 +1,38 @@
 import express from "express";
-import Entertainment from "../models/entertainment.js"
-import Avalability from "../models/avalability.js";
-import Platforms from "../models/platforms.js";
-import Genres from "../models/genres.js";
-import {STATUS_CODES, MODEL_TYPES} from '../config/constants.js';
-
+import entertainmentControllers from "../controllers/entertainmentController.js"
+import { query, validationResult } from "express-validator";
 const router = express.Router();
 
-router.get("/health", async(req, res) => {
-    res.status(STATUS_CODES.SUCCESS).json({status: 'ok'})
-})
+router.get("/health", entertainmentControllers.healthCheck)
+router.get("/search", 
+    [
+        query("title").optional().isString().trim().escape(),
+        query("type").optional().isString().trim().escape(),
+        query("releaseYear").optional().isInt({ min: 1800, max: 2100 }),
+        query("region").optional().isString().trim().escape(),
+    ], 
+    handleValidation,
+    entertainmentControllers.findMoviesOnFilter
+);
 
-/** TODO
- * Create a get function in which it handles different inputs values each time
- *      - Get data based on country
- *      - Get data based on genre
- *      - get data based on platform
- *      - Get data based on title
- *      - Get data based on year
- */
+router.post("/updatePlatformForRegion",
+    [
+        query("platform").optional().isString().trim().escape(),
+        query("region").optional().isString().trim().escape(),
+    ], 
+    handleValidation,
+    entertainmentControllers.uppdateEntertainemntData
+);
 
-router.get("/:title", async(req, res) => {
-    const entertainment = await Entertainment.find({title: req.params.title}).populate(MODEL_TYPES.GENRE);
-    res.json(entertainment)
-})
+router.get("/updatePlatformIds", entertainmentControllers.getPlatformIdsFromWatchmodeApi);
 
 export default router;
+
+// Middleware reused for all routes
+function handleValidation(req, res, next) {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+    next();
+}

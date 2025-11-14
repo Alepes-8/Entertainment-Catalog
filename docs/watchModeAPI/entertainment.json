@@ -1,0 +1,2259 @@
+[{
+    "message": {
+        "titles": [
+            {
+                "id": 3241768,
+                "title": "Boots",
+                "year": 2025,
+                "imdb_id": "tt27987047",
+                "tmdb_id": 225647,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 1823218,
+                "title": "The Woman in Cabin 10",
+                "year": 2025,
+                "imdb_id": "tt7130300",
+                "tmdb_id": 1290879,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3168469,
+                "title": "Solar Opposites",
+                "year": 2020,
+                "imdb_id": "tt8910922",
+                "tmdb_id": 97645,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3185573,
+                "title": "Fire Country",
+                "year": 2022,
+                "imdb_id": "tt16098700",
+                "tmdb_id": 202297,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3221512,
+                "title": "Néro the Assassin",
+                "year": 2025,
+                "imdb_id": "tt32400599",
+                "tmdb_id": 249551,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 348921,
+                "title": "Grey's Anatomy",
+                "year": 2005,
+                "imdb_id": "tt0413573",
+                "tmdb_id": 1416,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 383007,
+                "title": "NCIS",
+                "year": 2003,
+                "imdb_id": "tt0364845",
+                "tmdb_id": 4614,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3185665,
+                "title": "Turn of the Tide",
+                "year": 2023,
+                "imdb_id": "tt20268688",
+                "tmdb_id": 202577,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3234032,
+                "title": "Victoria Beckham",
+                "year": 2025,
+                "imdb_id": "tt33241853",
+                "tmdb_id": 262281,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 11042350,
+                "title": "My Father, the BTK Killer",
+                "year": 2025,
+                "imdb_id": "tt38466379",
+                "tmdb_id": 1550785,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3279951,
+                "title": "True Haunting",
+                "year": 2025,
+                "imdb_id": "tt38362312",
+                "tmdb_id": 300999,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 1812460,
+                "title": "She Walks in Darkness",
+                "year": 2025,
+                "imdb_id": "tt32129665",
+                "tmdb_id": 1275151,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3222955,
+                "title": "House of Guinness",
+                "year": 2025,
+                "imdb_id": "tt13542714",
+                "tmdb_id": 250988,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 1996393,
+                "title": "Swim to Me",
+                "year": 2025,
+                "imdb_id": "tt34682204",
+                "tmdb_id": 1484640,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1944218,
+                "title": "Everybody Loves Me When I'm Dead",
+                "year": 2025,
+                "imdb_id": "tt35669054",
+                "tmdb_id": 1429750,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3234666,
+                "title": "Starting 5",
+                "year": 2024,
+                "imdb_id": "tt33294894",
+                "tmdb_id": 262955,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 11042765,
+                "title": "Matt McCusker: A Humble Offering",
+                "year": 2025,
+                "imdb_id": "tt38347318",
+                "tmdb_id": 1551336,
+                "tmdb_type": "movie",
+                "type": "tv_special"
+            },
+            {
+                "id": 3189914,
+                "title": "Splinter Cell: Deathwatch",
+                "year": 2025,
+                "imdb_id": "tt12809802",
+                "tmdb_id": 127366,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3270463,
+                "title": "Dr. Seuss's Horton!",
+                "year": 2025,
+                "imdb_id": "tt18940344",
+                "tmdb_id": 293205,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3279497,
+                "title": "Is It Cake? Halloween",
+                "year": 2025,
+                "imdb_id": "tt37610484",
+                "tmdb_id": 300594,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3199568,
+                "title": "Genie, Make a Wish",
+                "year": 2025,
+                "imdb_id": "tt32409807",
+                "tmdb_id": 228689,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 550712,
+                "title": "Wayward",
+                "year": 2025,
+                "imdb_id": "tt27427326",
+                "tmdb_id": 255859,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 1849165,
+                "title": "27 Nights",
+                "year": 2025,
+                "imdb_id": "tt38095263",
+                "tmdb_id": 1327769,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3183467,
+                "title": "Pantheon",
+                "year": 2022,
+                "imdb_id": "tt11680642",
+                "tmdb_id": 195339,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3184495,
+                "title": "Dead Boy Detectives",
+                "year": 2024,
+                "imdb_id": "tt15358446",
+                "tmdb_id": 132750,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3188733,
+                "title": "Boy Swallows Universe",
+                "year": 2024,
+                "imdb_id": "tt10399902",
+                "tmdb_id": 209332,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3207934,
+                "title": "The Gentlemen",
+                "year": 2024,
+                "imdb_id": "tt13210838",
+                "tmdb_id": 236235,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3182191,
+                "title": "3 Body Problem",
+                "year": 2024,
+                "imdb_id": "tt13016388",
+                "tmdb_id": 108545,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3263483,
+                "title": "Adolescence",
+                "year": 2025,
+                "imdb_id": "tt31806037",
+                "tmdb_id": 249042,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3217460,
+                "title": "Dept. Q",
+                "year": 2025,
+                "imdb_id": "tt27995114",
+                "tmdb_id": 245703,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3213265,
+                "title": "Baby Bandito",
+                "year": 2024,
+                "imdb_id": "tt27997713",
+                "tmdb_id": 241480,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 1780773,
+                "title": "28 Years Later",
+                "year": 2025,
+                "imdb_id": "tt10548174",
+                "tmdb_id": 1100988,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3220803,
+                "title": "Untamed",
+                "year": 2025,
+                "imdb_id": "tt31710822",
+                "tmdb_id": 248852,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3220991,
+                "title": "Black Rabbit",
+                "year": 2025,
+                "imdb_id": "tt23055142",
+                "tmdb_id": 249039,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3182718,
+                "title": "Wednesday",
+                "year": 2022,
+                "imdb_id": "tt13443470",
+                "tmdb_id": 119051,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 1804101,
+                "title": "Happy Gilmore 2",
+                "year": 2025,
+                "imdb_id": "tt31868189",
+                "tmdb_id": 1263256,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1700766,
+                "title": "The Thursday Murder Club",
+                "year": 2025,
+                "imdb_id": "tt12001534",
+                "tmdb_id": 744653,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3206988,
+                "title": "Beckham",
+                "year": 2023,
+                "imdb_id": "tt14524712",
+                "tmdb_id": 235345,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3195555,
+                "title": "Scott Pilgrim Takes Off",
+                "year": 2023,
+                "imdb_id": "tt16969708",
+                "tmdb_id": 155292,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3213044,
+                "title": "Baby Reindeer",
+                "year": 2024,
+                "imdb_id": "tt13649112",
+                "tmdb_id": 241259,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 1691853,
+                "title": "Carry-On",
+                "year": 2024,
+                "imdb_id": "tt21382296",
+                "tmdb_id": 1005331,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1596405,
+                "title": "Glass Onion: A Knives Out Mystery",
+                "year": 2022,
+                "imdb_id": "tt11564570",
+                "tmdb_id": 661374,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1582807,
+                "title": "The Sandman",
+                "year": 2022,
+                "imdb_id": "tt1751634",
+                "tmdb_id": 90802,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3171191,
+                "title": "One Piece",
+                "year": 2023,
+                "imdb_id": "tt11737520",
+                "tmdb_id": 111110,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3225800,
+                "title": "When the Phone Rings",
+                "year": 2024,
+                "imdb_id": "tt33503491",
+                "tmdb_id": 253905,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3276936,
+                "title": "aka Charlie Sheen",
+                "year": 2025,
+                "imdb_id": "tt37898320",
+                "tmdb_id": 298234,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3170258,
+                "title": "Avatar the Last Airbender",
+                "year": 2024,
+                "imdb_id": "tt9018736",
+                "tmdb_id": 82452,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 546939,
+                "title": "American Primeval",
+                "year": 2025,
+                "imdb_id": "tt24069848",
+                "tmdb_id": 215866,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 1690558,
+                "title": "Wallace & Gromit: Vengeance Most Fowl",
+                "year": 2024,
+                "imdb_id": "tt17163970",
+                "tmdb_id": 929204,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1652190,
+                "title": "Venom: The Last Dance",
+                "year": 2024,
+                "imdb_id": "tt16366836",
+                "tmdb_id": 912649,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1521342,
+                "title": "All Quiet on the Western Front",
+                "year": 2022,
+                "imdb_id": "tt1016150",
+                "tmdb_id": 49046,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3197524,
+                "title": "King the Land",
+                "year": 2023,
+                "imdb_id": "tt26693803",
+                "tmdb_id": 198004,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3181750,
+                "title": "The Night Agent",
+                "year": 2023,
+                "imdb_id": "tt13918776",
+                "tmdb_id": 129552,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3222889,
+                "title": "Nobody Wants This",
+                "year": 2024,
+                "imdb_id": "tt26933824",
+                "tmdb_id": 250923,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 350163,
+                "title": "Halo",
+                "year": 2022,
+                "imdb_id": "tt2934286",
+                "tmdb_id": 52814,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3106380,
+                "title": "She-Ra and the Princesses of Power",
+                "year": 2018,
+                "imdb_id": "tt7745956",
+                "tmdb_id": 79732,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3212158,
+                "title": "Dandadan",
+                "year": 2024,
+                "imdb_id": "tt30217403",
+                "tmdb_id": 240411,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 548297,
+                "title": "Zero Day",
+                "year": 2025,
+                "imdb_id": "tt23872886",
+                "tmdb_id": 216082,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 1893263,
+                "title": "KPop Demon Hunters",
+                "year": 2025,
+                "imdb_id": "tt14205554",
+                "tmdb_id": 803796,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1706958,
+                "title": "Black Doves",
+                "year": 2024,
+                "imdb_id": "tt27995113",
+                "tmdb_id": 225385,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 1645477,
+                "title": "Smile",
+                "year": 2022,
+                "imdb_id": "tt15474916",
+                "tmdb_id": 882598,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1616014,
+                "title": "The Gray Man",
+                "year": 2022,
+                "imdb_id": "tt1649418",
+                "tmdb_id": 725201,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1609996,
+                "title": "The Adam Project",
+                "year": 2022,
+                "imdb_id": "tt2463208",
+                "tmdb_id": 696806,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3175655,
+                "title": "All of Us Are Dead",
+                "year": 2022,
+                "imdb_id": "tt14169960",
+                "tmdb_id": 99966,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3164899,
+                "title": "Ripley",
+                "year": 2024,
+                "imdb_id": "tt11016042",
+                "tmdb_id": 94028,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3186299,
+                "title": "The Diplomat",
+                "year": 2023,
+                "imdb_id": "tt17491088",
+                "tmdb_id": 203857,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3196837,
+                "title": "The Eternaut",
+                "year": 2025,
+                "imdb_id": "tt27740241",
+                "tmdb_id": 226362,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3184187,
+                "title": "The Lincoln Lawyer",
+                "year": 2022,
+                "imdb_id": "tt13833978",
+                "tmdb_id": 116799,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3217796,
+                "title": "No One Saw Us Leave",
+                "year": 2025,
+                "imdb_id": "tt31221478",
+                "tmdb_id": 246027,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 547411,
+                "title": "The Perfect Couple",
+                "year": 2024,
+                "imdb_id": "tt11514868",
+                "tmdb_id": 220564,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 548825,
+                "title": "The Residence",
+                "year": 2025,
+                "imdb_id": "tt8740614",
+                "tmdb_id": 242054,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 1617655,
+                "title": "My Octopus Teacher",
+                "year": 2020,
+                "imdb_id": "tt12888462",
+                "tmdb_id": 682110,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1593604,
+                "title": "The Sea Beast",
+                "year": 2022,
+                "imdb_id": "tt9288046",
+                "tmdb_id": 560057,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3182027,
+                "title": "Heartstopper",
+                "year": 2022,
+                "imdb_id": "tt10638036",
+                "tmdb_id": 124834,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3195914,
+                "title": "Blue Eye Samurai",
+                "year": 2023,
+                "imdb_id": "tt13309742",
+                "tmdb_id": 225180,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3179898,
+                "title": "Vikings: Valhalla",
+                "year": 2022,
+                "imdb_id": "tt11311302",
+                "tmdb_id": 116135,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3170089,
+                "title": "Cyberpunk: Edgerunners",
+                "year": 2022,
+                "imdb_id": "tt12590266",
+                "tmdb_id": 105248,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 543839,
+                "title": "The Fall of the House of Usher",
+                "year": 2023,
+                "imdb_id": "tt15567174",
+                "tmdb_id": 157065,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 11050026,
+                "title": "Inside Furioza",
+                "year": 2025,
+                "imdb_id": "tt36265413",
+                "tmdb_id": 1072699,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1295258,
+                "title": "Parasite",
+                "year": 2019,
+                "imdb_id": "tt6751668",
+                "tmdb_id": 496243,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3153842,
+                "title": "The Witcher",
+                "year": 2019,
+                "imdb_id": "tt5180504",
+                "tmdb_id": 71912,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3164600,
+                "title": "Squid Game",
+                "year": 2021,
+                "imdb_id": "tt10919420",
+                "tmdb_id": 93405,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3182711,
+                "title": "1899",
+                "year": 2022,
+                "imdb_id": "tt9319668",
+                "tmdb_id": 90669,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3183276,
+                "title": "Beef",
+                "year": 2023,
+                "imdb_id": "tt14403178",
+                "tmdb_id": 154385,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3196573,
+                "title": "Arnold",
+                "year": 2023,
+                "imdb_id": "tt27713897",
+                "tmdb_id": 226135,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3212418,
+                "title": "One Day",
+                "year": 2024,
+                "imdb_id": "tt16283804",
+                "tmdb_id": 240667,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3188265,
+                "title": "School Spirits",
+                "year": 2023,
+                "imdb_id": "tt21057450",
+                "tmdb_id": 208397,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3195245,
+                "title": "Frieren: Beyond Journey's End",
+                "year": 2023,
+                "imdb_id": "tt22248376",
+                "tmdb_id": 209867,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 1611949,
+                "title": "Hustle",
+                "year": 2022,
+                "imdb_id": "tt8009428",
+                "tmdb_id": 705861,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1601276,
+                "title": "Don't Look Up",
+                "year": 2021,
+                "imdb_id": "tt11286314",
+                "tmdb_id": 646380,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3182516,
+                "title": "Heartbreak High",
+                "year": 2022,
+                "imdb_id": "tt15054962",
+                "tmdb_id": 158154,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3105822,
+                "title": "Sex Education",
+                "year": 2019,
+                "imdb_id": "tt7767422",
+                "tmdb_id": 81356,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3171239,
+                "title": "Bridgerton",
+                "year": 2020,
+                "imdb_id": "tt8740790",
+                "tmdb_id": 91239,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3171197,
+                "title": "Blood of Zeus",
+                "year": 2020,
+                "imdb_id": "tt10009170",
+                "tmdb_id": 111111,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3130479,
+                "title": "The Umbrella Academy",
+                "year": 2019,
+                "imdb_id": "tt1312171",
+                "tmdb_id": 75006,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 397059,
+                "title": "Queer Eye",
+                "year": 2018,
+                "imdb_id": "tt7259746",
+                "tmdb_id": 76922,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3189482,
+                "title": "The Recruit",
+                "year": 2022,
+                "imdb_id": "tt16030542",
+                "tmdb_id": 210916,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3243070,
+                "title": "Running Point",
+                "year": 2025,
+                "imdb_id": "tt14879018",
+                "tmdb_id": 244623,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3245921,
+                "title": "When Life Gives You Tangerines",
+                "year": 2025,
+                "imdb_id": "tt26471411",
+                "tmdb_id": 219246,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3218836,
+                "title": "Sirens",
+                "year": 2025,
+                "imdb_id": "tt31429675",
+                "tmdb_id": 246992,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3227633,
+                "title": "Haunted Hotel",
+                "year": 2025,
+                "imdb_id": "tt32499579",
+                "tmdb_id": 255752,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3178198,
+                "title": "Arcane",
+                "year": 2021,
+                "imdb_id": "tt11126994",
+                "tmdb_id": 94605,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3146538,
+                "title": "You",
+                "year": 2018,
+                "imdb_id": "tt7335184",
+                "tmdb_id": 78191,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 323535,
+                "title": "Cobra Kai",
+                "year": 2018,
+                "imdb_id": "tt7221388",
+                "tmdb_id": 77169,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 540761,
+                "title": "The Queen's Gambit",
+                "year": 2020,
+                "imdb_id": "tt10048342",
+                "tmdb_id": 87739,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 545514,
+                "title": "From Scratch",
+                "year": 2022,
+                "imdb_id": "tt11252254",
+                "tmdb_id": 207717,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 545853,
+                "title": "The Watcher",
+                "year": 2022,
+                "imdb_id": "tt14852808",
+                "tmdb_id": 210232,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 546921,
+                "title": "Queen Charlotte: A Bridgerton Story",
+                "year": 2023,
+                "imdb_id": "tt14661396",
+                "tmdb_id": 196454,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 1513054,
+                "title": "The Gentlemen",
+                "year": 2020,
+                "imdb_id": "tt8367814",
+                "tmdb_id": 522627,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1399319,
+                "title": "The Irishman",
+                "year": 2019,
+                "imdb_id": "tt1302006",
+                "tmdb_id": 398978,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 151959,
+                "title": "Bird Box",
+                "year": 2018,
+                "imdb_id": "tt2737304",
+                "tmdb_id": 405774,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 111286,
+                "title": "A Star Is Born",
+                "year": 2018,
+                "imdb_id": "tt1517451",
+                "tmdb_id": 332562,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3185007,
+                "title": "Mo",
+                "year": 2022,
+                "imdb_id": "tt15875168",
+                "tmdb_id": 201124,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3162497,
+                "title": "I Think You Should Leave with Tim Robinson",
+                "year": 2019,
+                "imdb_id": "tt10050772",
+                "tmdb_id": 88728,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3160845,
+                "title": "Love, Death & Robots",
+                "year": 2019,
+                "imdb_id": "tt9561862",
+                "tmdb_id": 86831,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 352600,
+                "title": "Hilda",
+                "year": 2018,
+                "imdb_id": "tt6385540",
+                "tmdb_id": 82456,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3158953,
+                "title": "Guillermo del Toro's Cabinet of Curiosities",
+                "year": 2022,
+                "imdb_id": "tt8415836",
+                "tmdb_id": 83659,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3190574,
+                "title": "Lockwood & Co.",
+                "year": 2023,
+                "imdb_id": "tt13802576",
+                "tmdb_id": 213241,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3182542,
+                "title": "KAOS",
+                "year": 2024,
+                "imdb_id": "tt8550732",
+                "tmdb_id": 102621,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3217040,
+                "title": "A Man on the Inside",
+                "year": 2024,
+                "imdb_id": "tt26670955",
+                "tmdb_id": 245312,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3215196,
+                "title": "The Four Seasons",
+                "year": 2025,
+                "imdb_id": "tt30826447",
+                "tmdb_id": 243316,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3170189,
+                "title": "Alice in Borderland",
+                "year": 2020,
+                "imdb_id": "tt10795658",
+                "tmdb_id": 110316,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3186281,
+                "title": "Castlevania: Nocturne",
+                "year": 2023,
+                "imdb_id": "tt14833612",
+                "tmdb_id": 123548,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3191933,
+                "title": "The Walking Dead: Daryl Dixon",
+                "year": 2023,
+                "imdb_id": "tt13062500",
+                "tmdb_id": 211684,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3170425,
+                "title": "Jujutsu Kaisen",
+                "year": 2020,
+                "imdb_id": "tt12343534",
+                "tmdb_id": 95479,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3162280,
+                "title": "Demon Slayer: Kimetsu no Yaiba",
+                "year": 2019,
+                "imdb_id": "tt9335498",
+                "tmdb_id": 85937,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 548344,
+                "title": "Bodies",
+                "year": 2023,
+                "imdb_id": "tt18347622",
+                "tmdb_id": 233629,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 541698,
+                "title": "Night Stalker: The Hunt for a Serial Killer",
+                "year": 2021,
+                "imdb_id": "tt13651632",
+                "tmdb_id": 114705,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 1623694,
+                "title": "The Electric State",
+                "year": 2025,
+                "imdb_id": "tt7766378",
+                "tmdb_id": 777443,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1586594,
+                "title": "El Camino: A Breaking Bad Movie",
+                "year": 2019,
+                "imdb_id": "tt9243946",
+                "tmdb_id": 559969,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1585238,
+                "title": "The Platform",
+                "year": 2019,
+                "imdb_id": "tt8228288",
+                "tmdb_id": 619264,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1543519,
+                "title": "Kraven the Hunter",
+                "year": 2024,
+                "imdb_id": "tt8790086",
+                "tmdb_id": 539972,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1505741,
+                "title": "Extraction",
+                "year": 2020,
+                "imdb_id": "tt8936646",
+                "tmdb_id": 545609,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1496503,
+                "title": "Downton Abbey",
+                "year": 2019,
+                "imdb_id": "tt6398184",
+                "tmdb_id": 535544,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1318351,
+                "title": "Red Notice",
+                "year": 2021,
+                "imdb_id": "tt7991608",
+                "tmdb_id": 512195,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3181483,
+                "title": "Business Proposal",
+                "year": 2022,
+                "imdb_id": "tt14819828",
+                "tmdb_id": 154825,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3168647,
+                "title": "Outer Banks",
+                "year": 2020,
+                "imdb_id": "tt10293938",
+                "tmdb_id": 100757,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3166158,
+                "title": "Lupin",
+                "year": 2021,
+                "imdb_id": "tt2531336",
+                "tmdb_id": 96677,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3191223,
+                "title": "The Glory",
+                "year": 2022,
+                "imdb_id": "tt21344706",
+                "tmdb_id": 136283,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3175783,
+                "title": "Elite",
+                "year": 2018,
+                "imdb_id": "tt7134908",
+                "tmdb_id": 76669,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3194977,
+                "title": "FUBAR",
+                "year": 2023,
+                "imdb_id": "tt13064902",
+                "tmdb_id": 221300,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3197638,
+                "title": "The Brothers Sun",
+                "year": 2024,
+                "imdb_id": "tt17632862",
+                "tmdb_id": 227004,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3212006,
+                "title": "Queen of Tears",
+                "year": 2024,
+                "imdb_id": "tt27668559",
+                "tmdb_id": 215720,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3219392,
+                "title": "Tires",
+                "year": 2024,
+                "imdb_id": "tt31491435",
+                "tmdb_id": 247522,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3150702,
+                "title": "Emily in Paris",
+                "year": 2020,
+                "imdb_id": "tt8962124",
+                "tmdb_id": 82596,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 36310,
+                "title": "Altered Carbon",
+                "year": 2018,
+                "imdb_id": "tt2261227",
+                "tmdb_id": 68421,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3208835,
+                "title": "The Amazing Digital Circus",
+                "year": 2023,
+                "imdb_id": "tt27610198",
+                "tmdb_id": 261145,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 363849,
+                "title": "Killing Eve",
+                "year": 2018,
+                "imdb_id": "tt7016936",
+                "tmdb_id": 72750,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 375254,
+                "title": "Manifest",
+                "year": 2018,
+                "imdb_id": "tt8421350",
+                "tmdb_id": 79696,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3123551,
+                "title": "The Haunting of Hill House",
+                "year": 2018,
+                "imdb_id": "tt6763664",
+                "tmdb_id": 72844,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 538620,
+                "title": "Bill Burr: Paper Tiger",
+                "year": 2019,
+                "imdb_id": "tt10847306",
+                "tmdb_id": 625128,
+                "tmdb_type": "movie",
+                "type": "tv_special"
+            },
+            {
+                "id": 543178,
+                "title": "Inventing Anna",
+                "year": 2022,
+                "imdb_id": "tt8740976",
+                "tmdb_id": 95665,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 547365,
+                "title": "Eric",
+                "year": 2024,
+                "imdb_id": "tt16283824",
+                "tmdb_id": 217667,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 519450,
+                "title": "The Last Dance",
+                "year": 2020,
+                "imdb_id": "tt8420184",
+                "tmdb_id": 79525,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 11047294,
+                "title": "Turn of the Tide: The Surreal Story of Rabo de Peixe",
+                "year": 2025,
+                "imdb_id": "tt38356685",
+                "tmdb_id": 1557977,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1633458,
+                "title": "The Swimmers",
+                "year": 2022,
+                "imdb_id": "tt8745676",
+                "tmdb_id": 821881,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1592516,
+                "title": "Plane",
+                "year": 2023,
+                "imdb_id": "tt5884796",
+                "tmdb_id": 646389,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1607947,
+                "title": "David Attenborough: A Life on Our Planet",
+                "year": 2020,
+                "imdb_id": "tt11989890",
+                "tmdb_id": 664280,
+                "tmdb_type": "movie",
+                "type": "tv_movie"
+            },
+            {
+                "id": 1564077,
+                "title": "Enola Holmes",
+                "year": 2020,
+                "imdb_id": "tt7846844",
+                "tmdb_id": 497582,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1450944,
+                "title": "Marriage Story",
+                "year": 2019,
+                "imdb_id": "tt7653254",
+                "tmdb_id": 492188,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1513834,
+                "title": "Guillermo del Toro's Pinocchio",
+                "year": 2022,
+                "imdb_id": "tt1488589",
+                "tmdb_id": 555604,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1451780,
+                "title": "Upgrade",
+                "year": 2018,
+                "imdb_id": "tt6499752",
+                "tmdb_id": 500664,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1381145,
+                "title": "The Boy Who Harnessed the Wind",
+                "year": 2019,
+                "imdb_id": "tt7533152",
+                "tmdb_id": 491480,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1167187,
+                "title": "Fast & Furious Presents: Hobbs & Shaw",
+                "year": 2019,
+                "imdb_id": "tt6806448",
+                "tmdb_id": 384018,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3182530,
+                "title": "First Kill",
+                "year": 2022,
+                "imdb_id": "tt13315156",
+                "tmdb_id": 111616,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3169435,
+                "title": "The Cuphead Show!",
+                "year": 2022,
+                "imdb_id": "tt10611608",
+                "tmdb_id": 103786,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3168406,
+                "title": "Never Have I Ever",
+                "year": 2020,
+                "imdb_id": "tt10062292",
+                "tmdb_id": 100883,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3170404,
+                "title": "Julie and the Phantoms",
+                "year": 2020,
+                "imdb_id": "tt10183988",
+                "tmdb_id": 106292,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3173710,
+                "title": "Ginny & Georgia",
+                "year": 2021,
+                "imdb_id": "tt10813940",
+                "tmdb_id": 117581,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3168697,
+                "title": "The Midnight Gospel",
+                "year": 2020,
+                "imdb_id": "tt11639414",
+                "tmdb_id": 96713,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3171836,
+                "title": "The Witcher: Blood Origin",
+                "year": 2022,
+                "imdb_id": "tt12785720",
+                "tmdb_id": 106541,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3185948,
+                "title": "Berlin",
+                "year": 2023,
+                "imdb_id": "tt16288804",
+                "tmdb_id": 146176,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 339204,
+                "title": "Everything Sucks!",
+                "year": 2018,
+                "imdb_id": "tt7078710",
+                "tmdb_id": 76438,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3203611,
+                "title": "Toxic Town",
+                "year": 2025,
+                "imdb_id": "tt28631067",
+                "tmdb_id": 232342,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3207606,
+                "title": "Devil May Cry",
+                "year": 2025,
+                "imdb_id": "tt15716776",
+                "tmdb_id": 235930,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3171281,
+                "title": "Resident Evil",
+                "year": 2022,
+                "imdb_id": "tt9660182",
+                "tmdb_id": 108296,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3212649,
+                "title": "A Good Girl's Guide to Murder",
+                "year": 2024,
+                "imdb_id": "tt28118211",
+                "tmdb_id": 218342,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 321872,
+                "title": "Chilling Adventures of Sabrina",
+                "year": 2018,
+                "imdb_id": "tt7569592",
+                "tmdb_id": 79242,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3177205,
+                "title": "Yellowjackets",
+                "year": 2021,
+                "imdb_id": "tt11041332",
+                "tmdb_id": 117488,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 372446,
+                "title": "Lost in Space",
+                "year": 2018,
+                "imdb_id": "tt5232792",
+                "tmdb_id": 75758,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 538652,
+                "title": "The Serpent",
+                "year": 2021,
+                "imdb_id": "tt7985576",
+                "tmdb_id": 93454,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 547174,
+                "title": "Griselda",
+                "year": 2024,
+                "imdb_id": "tt15837600",
+                "tmdb_id": 137893,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 530010,
+                "title": "Ricky Gervais: Humanity",
+                "year": 2018,
+                "imdb_id": "tt7830574",
+                "tmdb_id": 508933,
+                "tmdb_type": "movie",
+                "type": "tv_special"
+            },
+            {
+                "id": 543244,
+                "title": "The Tourist",
+                "year": 2022,
+                "imdb_id": "tt11847842",
+                "tmdb_id": 120909,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 544157,
+                "title": "The Walking Dead: Dead City",
+                "year": 2023,
+                "imdb_id": "tt18546730",
+                "tmdb_id": 194583,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 1749638,
+                "title": "The Wild Robot",
+                "year": 2024,
+                "imdb_id": "tt29623480",
+                "tmdb_id": 1184918,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1688507,
+                "title": "Nimona",
+                "year": 2023,
+                "imdb_id": "tt19500164",
+                "tmdb_id": 961323,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1653020,
+                "title": "The Wonderful Story of Henry Sugar",
+                "year": 2023,
+                "imdb_id": "tt16968450",
+                "tmdb_id": 923939,
+                "tmdb_type": "movie",
+                "type": "short_film"
+            },
+            {
+                "id": 1635164,
+                "title": "Enola Holmes 2",
+                "year": 2022,
+                "imdb_id": "tt14641788",
+                "tmdb_id": 829280,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1620488,
+                "title": "Day Shift",
+                "year": 2022,
+                "imdb_id": "tt13314558",
+                "tmdb_id": 755566,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1560906,
+                "title": "Army of the Dead",
+                "year": 2021,
+                "imdb_id": "tt0993840",
+                "tmdb_id": 503736,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1549698,
+                "title": "Shadow and Bone",
+                "year": 2021,
+                "imdb_id": "tt2403776",
+                "tmdb_id": 85720,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 1538334,
+                "title": "tick, tick... BOOM!",
+                "year": 2021,
+                "imdb_id": "tt8721424",
+                "tmdb_id": 537116,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1206231,
+                "title": "Klaus",
+                "year": 2019,
+                "imdb_id": "tt4729430",
+                "tmdb_id": 508965,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 14313,
+                "title": "6 Underground",
+                "year": 2019,
+                "imdb_id": "tt8106534",
+                "tmdb_id": 509967,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3164445,
+                "title": "Criminal: UK",
+                "year": 2019,
+                "imdb_id": "tt9348692",
+                "tmdb_id": 92926,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3186566,
+                "title": "Extraordinary Attorney Woo",
+                "year": 2022,
+                "imdb_id": "tt20869502",
+                "tmdb_id": 197067,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 332402,
+                "title": "Disenchantment",
+                "year": 2018,
+                "imdb_id": "tt5363918",
+                "tmdb_id": 73021,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 383654,
+                "title": "Narcos: Mexico",
+                "year": 2018,
+                "imdb_id": "tt8714904",
+                "tmdb_id": 80968,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3165161,
+                "title": "Giri/Haji",
+                "year": 2019,
+                "imdb_id": "tt8001106",
+                "tmdb_id": 94659,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3170916,
+                "title": "The Haunting of Bly Manor",
+                "year": 2020,
+                "imdb_id": "tt10970552",
+                "tmdb_id": 109958,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3166375,
+                "title": "Behind Her Eyes",
+                "year": 2021,
+                "imdb_id": "tt9698442",
+                "tmdb_id": 97173,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3166458,
+                "title": "Midnight Mass",
+                "year": 2021,
+                "imdb_id": "tt10574558",
+                "tmdb_id": 97400,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3181858,
+                "title": "That '90s Show",
+                "year": 2023,
+                "imdb_id": "tt15591076",
+                "tmdb_id": 135959,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3162250,
+                "title": "The Society",
+                "year": 2019,
+                "imdb_id": "tt8778064",
+                "tmdb_id": 84647,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3234589,
+                "title": "Secrets We Keep",
+                "year": 2025,
+                "imdb_id": "tt33496221",
+                "tmdb_id": 262878,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3226419,
+                "title": "The Waterfront",
+                "year": 2025,
+                "imdb_id": "tt31216548",
+                "tmdb_id": 254544,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3173896,
+                "title": "Sweet Tooth",
+                "year": 2021,
+                "imdb_id": "tt12809988",
+                "tmdb_id": 103768,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 347980,
+                "title": "Good Girls",
+                "year": 2018,
+                "imdb_id": "tt6474378",
+                "tmdb_id": 71715,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3183092,
+                "title": "Interview with the Vampire",
+                "year": 2022,
+                "imdb_id": "tt3960394",
+                "tmdb_id": 128098,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3163588,
+                "title": "Vinland Saga",
+                "year": 2019,
+                "imdb_id": "tt10233448",
+                "tmdb_id": 88803,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 315712,
+                "title": "Bodyguard",
+                "year": 2018,
+                "imdb_id": "tt7493974",
+                "tmdb_id": 80307,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 32288,
+                "title": "A Discovery of Witches",
+                "year": 2018,
+                "imdb_id": "tt2177461",
+                "tmdb_id": 77236,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 4146765,
+                "title": "Resident Alien",
+                "year": 2021,
+                "imdb_id": "tt8690918",
+                "tmdb_id": 96580,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 1727264,
+                "title": "Nonnas",
+                "year": 2025,
+                "imdb_id": "tt28309594",
+                "tmdb_id": 1151039,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1631017,
+                "title": "The Pale Blue Eye",
+                "year": 2022,
+                "imdb_id": "tt14138650",
+                "tmdb_id": 800815,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1587484,
+                "title": "The Dig",
+                "year": 2021,
+                "imdb_id": "tt3661210",
+                "tmdb_id": 532865,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1583605,
+                "title": "The Guilty",
+                "year": 2021,
+                "imdb_id": "tt9421570",
+                "tmdb_id": 567748,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1578413,
+                "title": "The Power of the Dog",
+                "year": 2021,
+                "imdb_id": "tt10293406",
+                "tmdb_id": 600583,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1557334,
+                "title": "The Old Guard",
+                "year": 2020,
+                "imdb_id": "tt7556122",
+                "tmdb_id": 547016,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1496673,
+                "title": "Murder Mystery",
+                "year": 2019,
+                "imdb_id": "tt1618434",
+                "tmdb_id": 514999,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1395829,
+                "title": "The Guernsey Literary & Potato Peel Pie Society",
+                "year": 2018,
+                "imdb_id": "tt1289403",
+                "tmdb_id": 451480,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1249832,
+                "title": "Maze Runner: The Death Cure",
+                "year": 2018,
+                "imdb_id": "tt4500922",
+                "tmdb_id": 336843,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3168473,
+                "title": "Tiger King",
+                "year": 2020,
+                "imdb_id": "tt11823076",
+                "tmdb_id": 100698,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3160548,
+                "title": "Locke & Key",
+                "year": 2020,
+                "imdb_id": "tt3007572",
+                "tmdb_id": 86423,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3158330,
+                "title": "Russian Doll",
+                "year": 2019,
+                "imdb_id": "tt7520794",
+                "tmdb_id": 84977,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3179893,
+                "title": "Archive 81",
+                "year": 2022,
+                "imdb_id": "tt13365348",
+                "tmdb_id": 112314,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3186212,
+                "title": "Alchemy of Souls",
+                "year": 2022,
+                "imdb_id": "tt20859920",
+                "tmdb_id": 135157,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3154799,
+                "title": "Dead to Me",
+                "year": 2019,
+                "imdb_id": "tt8064302",
+                "tmdb_id": 81357,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 388259,
+                "title": "On My Block",
+                "year": 2018,
+                "imdb_id": "tt7879820",
+                "tmdb_id": 76747,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3216307,
+                "title": "The Hunting Wives",
+                "year": 2025,
+                "imdb_id": "tt31038430",
+                "tmdb_id": 244447,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3171235,
+                "title": "Maid",
+                "year": 2021,
+                "imdb_id": "tt11337908",
+                "tmdb_id": 111141,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3163173,
+                "title": "Evil",
+                "year": 2019,
+                "imdb_id": "tt9055008",
+                "tmdb_id": 86848,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 3186480,
+                "title": "Scavengers Reign",
+                "year": 2023,
+                "imdb_id": "tt21056886",
+                "tmdb_id": 204154,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 3164931,
+                "title": "Jurassic World: Camp Cretaceous",
+                "year": 2020,
+                "imdb_id": "tt10436228",
+                "tmdb_id": 93741,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 33263,
+                "title": "A.P. Bio",
+                "year": 2018,
+                "imdb_id": "tt6461726",
+                "tmdb_id": 71737,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            },
+            {
+                "id": 518463,
+                "title": "The Ballad of Buster Scruggs",
+                "year": 2018,
+                "imdb_id": "tt6412452",
+                "tmdb_id": 537996,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 543986,
+                "title": "Painkiller",
+                "year": 2023,
+                "imdb_id": "tt11816814",
+                "tmdb_id": 158083,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 1765851,
+                "title": "Karate Kid: Legends",
+                "year": 2025,
+                "imdb_id": "tt1674782",
+                "tmdb_id": 1011477,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1704425,
+                "title": "Fool Me Once",
+                "year": 2024,
+                "imdb_id": "tt5611024",
+                "tmdb_id": 220801,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 1644580,
+                "title": "Jeen-yuhs: A Kanye Trilogy",
+                "year": 2022,
+                "imdb_id": "tt14599438",
+                "tmdb_id": 155094,
+                "tmdb_type": "tv",
+                "type": "tv_miniseries"
+            },
+            {
+                "id": 1638803,
+                "title": "Beetlejuice Beetlejuice",
+                "year": 2024,
+                "imdb_id": "tt2049403",
+                "tmdb_id": 917496,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1595879,
+                "title": "Pieces of a Woman",
+                "year": 2020,
+                "imdb_id": "tt11161474",
+                "tmdb_id": 641662,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1511131,
+                "title": "Official Secrets",
+                "year": 2019,
+                "imdb_id": "tt5431890",
+                "tmdb_id": 393624,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1505141,
+                "title": "The Dirt",
+                "year": 2019,
+                "imdb_id": "tt0800325",
+                "tmdb_id": 327331,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1440747,
+                "title": "Triple Frontier",
+                "year": 2019,
+                "imdb_id": "tt1488606",
+                "tmdb_id": 399361,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1400423,
+                "title": "The King",
+                "year": 2019,
+                "imdb_id": "tt7984766",
+                "tmdb_id": 504949,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 1389676,
+                "title": "Escape Room",
+                "year": 2019,
+                "imdb_id": "tt5886046",
+                "tmdb_id": 522681,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 196666,
+                "title": "Den of Thieves",
+                "year": 2018,
+                "imdb_id": "tt1259528",
+                "tmdb_id": 449443,
+                "tmdb_type": "movie",
+                "type": "movie"
+            },
+            {
+                "id": 3165230,
+                "title": "Crash Landing on You",
+                "year": 2019,
+                "imdb_id": "tt10850932",
+                "tmdb_id": 94796,
+                "tmdb_type": "tv",
+                "type": "tv_series"
+            }
+        ],
+        "page": 1,
+        "total_pages": 22,
+        "total_results": 5358
+    }
+}]
