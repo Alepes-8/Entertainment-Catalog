@@ -22,7 +22,7 @@ export const findMoviesOnFilter = async(req , res) => {
         // we will not add the filter unless it exist. This is because setting it to null would still count as a value and would be searched for.
         if(req.query.title) filter.title = req.query.title;
         if(req.query.type) filter.entertainmentType = req.query.type;
-        if(req.query.releaseYear) filter.releaseYear = req.query.releaseYear;
+        if(req.query.releaseYear) filter.releaseYear = Number(req.query.releaseYear);
         
         /*if (req.query.genre?.length > 0) {
             const genres = await Genres.find( { name: { $in: req.query.genre } } ).exec();
