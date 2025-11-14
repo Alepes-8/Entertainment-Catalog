@@ -36,7 +36,7 @@ export const findMoviesOnFilter = async(req , res) => {
         
         // Get the avalability status of each movie found within the filter.
         const availabilityFilter = {}
-        if(req.query.region) availabilityFilter.region = req.query.region;
+        if(req.query.region) availabilityFilter.region = req.query.region.toString().toLowerCase();
         
         //Match the platform ids to the platform names and change id to platform name
         // Use the input platforms used for the search action, to add a filter to only find those that match given platforms.
@@ -63,12 +63,12 @@ export const uppdateEntertainemntData = async(req, res) => {
         const filter = {};
 
         if(req.query.platform) {
-            filter.platform = req.query.platform;
+            filter.platform = req.query.platform.toString().toLowerCase();
         }else {
             filter.platform = DEFUALT_VALUES.PLATFORM;
         }
         if(req.query.region){
-            filter.region = req.query.region;
+            filter.region = req.query.region.toString().toLowerCase();
         }else {
             filter.region = DEFUALT_VALUES.REGION;
         }
