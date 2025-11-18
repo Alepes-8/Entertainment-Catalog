@@ -93,8 +93,8 @@ export const uppdateEntertainemntData = async(req, res) => {
         const apiKey = WATCHMODE_API_KEY;
         const sourceIds = platformData?.watchModePlatformId;
 
-        const url = `https://api.watchmode.com/v1/list-titles/?apiKey=${apiKey}&source_ids=${sourceIds}&regions=${filter.region}`; // TODO add different regions, so repeate for multiple regions
-
+        const url = `https://api.watchmode.com/v1/list-titles/?apiKey=${apiKey}&source_ids=${sourceIds}&regions=${filter.region}`; 
+        
         const response = await fetch(url);
         const jsonResponse = await response.json();
         // do something with myJson
