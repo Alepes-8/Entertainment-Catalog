@@ -4,13 +4,10 @@
 // 
 import Entertainment from "../models/entertainment.js";
 import Platforms from "../models/platforms.js"
-import Genres from "../models/genres.js";
 import Avalability from "../models/avalability.js"
 import ApiCalled from "../models/apiCalled.js";
 import {STATUS_CODES, API_WAIT_TIMES, APIS_CALLS, DEFUALT_VALUES, STATUS_MESSAGES} from '../config/constants.js';
 import { WATCHMODE_API_KEY } from '../config/config.js';
-import apiCalled from "../models/apiCalled.js";
-import entertainment from "../models/entertainment.js";
 
 export const healthCheck = async(req, res) => {
     res.status(STATUS_CODES.SUCCESS).json({status: STATUS_MESSAGES.OK})
