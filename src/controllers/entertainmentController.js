@@ -65,7 +65,7 @@ export const uppdateEntertainemntData = async(req, res) => {
             filter.platform = DEFUALT_VALUES.PLATFORM;
         }
         if(req.query.region){
-            filter.region = req.query.region.toString().toLowerCase();
+            filter.region = req.query.region.toString().toUpperCase();
         }else {
             filter.region = DEFUALT_VALUES.REGION;
         }
@@ -92,7 +92,7 @@ export const uppdateEntertainemntData = async(req, res) => {
         // Set your API key here
         const apiKey = WATCHMODE_API_KEY;
         const sourceIds = platformData?.watchModePlatformId;
-        
+
         const url = `https://api.watchmode.com/v1/list-titles/?apiKey=${apiKey}&source_ids=${sourceIds}&regions=${filter.region}`; // TODO add different regions, so repeate for multiple regions
 
         const response = await fetch(url);
@@ -148,7 +148,7 @@ export const uppdateEntertainemntData = async(req, res) => {
         await Avalability.bulkWrite(filteredAvailability)
 
         await ApiCalled.updateOne(
-            {apiName: APIS_CALLS.WATCHMODE_SOURCE_UPDATE}, // Filter to find the name
+            {apiName: APIS_CALLS.WATCHMODE_PLATFORM_REGION_UPDATE + `_${filter.platform}_${filter.region}`}, // Filter to find the name
             {$set: {    // If the name is found, update the last called time
                 lastCalled: currentTime
             }},

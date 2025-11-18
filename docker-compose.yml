@@ -18,8 +18,8 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - port=${PORT}
-      - MONGO_URI=${MONGO_URI}
+      - port=5000
+      - MONGO_URI=mongodb://mongo:27017/entertainment
     depends_on:
       - mongo
           

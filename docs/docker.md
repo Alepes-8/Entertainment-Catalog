@@ -4,6 +4,7 @@ The Docker setup is included in this project to ensure a high level of **environ
 
 While occasional updates may still be necessary, using a container ensures that the application behaves consistently across all environments — whether running locally or deployed on an external API service.
 
+To run and build the docker **docker-compose up --build**
 ## Swagger UI
 
 The current setup allows for the **Swagger UI** to be running along side the API system, allowing the users the understanding that if the **entertainment_api** container is running you will be able to se the swagger ui, unless issues has occured. Which in turn can be used to test the **entertainment_api** functionality.
